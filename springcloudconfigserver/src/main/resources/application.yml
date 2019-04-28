@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      instance-id: microservicecloud-dept8888
+      prefer-ip-address: true
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git.oschina.net/chrywhy/test
+          searchPaths: spring-cloud/helloworldConfig
+  application:
+    name: config-server
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.mark.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
